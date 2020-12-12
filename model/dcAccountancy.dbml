@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Accountancy" Class="dcAccountancyDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Accountancy;Integrated Security=True" SettingsObjectName="Accounting.Properties.Settings" SettingsPropertyName="AccountancyConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.settings_tbl" Member="settings_tbls">
+    <Type Name="settings_tbl" Id="ID1" Modifier="Sealed">
+      <Column Name="settingsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="companyname" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="codeeghtesadi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="codemelli" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="invoiceaddress" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="invoicephonenumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="invtracephonenumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="smspanelusername" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="smsmpanelpassword" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="smssender" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="smsrecivernumber" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="hoshdarsarresidaz" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoshdarsarresidta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="invtraceaddress" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="usermobile" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="banksend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="invoicesend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="modiramel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sabt_code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="logo1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="logo2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="add_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="edit_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="add_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.roles_tbl" Member="roles_tbls">
+    <Type Name="roles_tbl" Id="ID2" Modifier="Sealed">
+      <Column Name="roleid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rolename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="depotpermission" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="bankpermission" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="personpermission" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="factorpermission" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="settingspermission" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="userpermission" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="add_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="edit_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="add_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="roles_tbl_users_tbl" Member="users_tbls" ThisKey="roleid" OtherKey="roleid" Type="users_tbl" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users_tbl" Member="users_tbls">
+    <Type Name="users_tbl" Id="ID3" Modifier="Sealed">
+      <Column Name="userid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="roleid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="userpassword" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="is_actve" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="family" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="u_address" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="mobile" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="add_date" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="add_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="edit_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="roles_tbl_users_tbl" Member="roles_tbl" ThisKey="roleid" OtherKey="roleid" Type="roles_tbl" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.ExistsSettings_tbl" Method="ExistsSettings_tbl">
+    <Parameter Name="ExistSettings" Parameter="existSettings" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FillSettings_tbl" Method="FillSettings_tbl">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.InsertSettings_tbl" Method="InsertSettings_tbl">
+    <Parameter Name="companyname" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="codeeghtesadi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="codemelli" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="invoiceaddress" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="invoicephonenumber" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="invtracephonenumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="smspanelusername" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="smsmpanelpassword" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="smssender" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="smsrecivernumber" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="hoshdarsarresidaz" Type="System.Int32" DbType="Int" />
+    <Parameter Name="hoshdarsarresidta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="invtraceaddress" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="usermobile" Type="System.String" DbType="NVarChar(11)" />
+    <Parameter Name="banksend" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="invoicesend" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="modiramel" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="sabt_code" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="logo1" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="logo2" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="is_active" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="add_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="edit_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="add_date" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateSettings_tbl" Method="UpdateSettings_tbl">
+    <Parameter Name="companyname" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="codeeghtesadi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="codemelli" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="invoiceaddress" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="invoicephonenumber" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="invtracephonenumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="smspanelusername" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="smsmpanelpassword" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="smssender" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="smsrecivernumber" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="hoshdarsarresidaz" Type="System.Int32" DbType="Int" />
+    <Parameter Name="hoshdarsarresidta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="invtraceaddress" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="usermobile" Type="System.String" DbType="NVarChar(11)" />
+    <Parameter Name="banksend" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="invoicesend" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="modiramel" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="sabt_code" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="logo1" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="logo2" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="is_active" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="add_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="edit_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="add_date" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteRoles" Method="DeleteRoles">
+    <Parameter Name="roleid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ExistRoles" Method="ExistRoles">
+    <Parameter Name="Exists" Parameter="exists" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FillRoles" Method="FillRoles">
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.FillRolesById" Method="FillRolesById">
+    <Parameter Name="roleid" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="dbo.InsertRoles" Method="InsertRoles">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="depot" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="bank" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="person" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="factor" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="settings" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="user" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="is_active" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="add_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="edit_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="add_date" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateRoles" Method="UpdateRoles">
+    <Parameter Name="roleid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="depot" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="bank" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="person" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="factor" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="settings" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="user" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="is_active" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="add_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="edit_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="add_date" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteuserByID" Method="sp_DeleteuserByID">
+    <Parameter Name="userid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_FillUsers" Method="sp_FillUsers">
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.sp_FindUserByID" Method="sp_FindUserByID">
+    <Parameter Name="userid" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="dbo.sp_UserNameCheck" Method="sp_UserNameCheck">
+    <Parameter Name="Check" Parameter="check" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UsersExists" Method="sp_UsersExists">
+    <Parameter Name="ExistUsers" Parameter="existUsers" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.updateusers_tbl" Method="updateusers_tbl">
+    <Parameter Name="userid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="roleid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="userpassword" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="is_actve" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="family" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="user_address" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="phone" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="mobile" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="add_date" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="add_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="edit_user" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.insertusers_tbl" Method="insertusers_tbl">
+    <Parameter Name="roleid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="userpassword" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="is_actve" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="family" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="user_address" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="phone" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="mobile" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="add_date" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="add_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="edit_user" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UserPassCheck" Method="sp_UserPassCheck">
+    <Parameter Name="CheckPassword" Parameter="checkPassword" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

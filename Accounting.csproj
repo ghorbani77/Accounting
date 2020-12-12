@@ -32,8 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BehComponents, Version=2.2.0.0, Culture=neutral, PublicKeyToken=a36ced8ede3e7af7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\BehComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.4.0.2, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,8 +56,80 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddRoles.Designer.cs">
+      <DependentUpon>frmAddRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmresponsive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmresponsive.Designer.cs">
+      <DependentUpon>frmresponsive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowrolles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowrolles.Designer.cs">
+      <DependentUpon>frmShowrolles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShowUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowUsers.Designer.cs">
+      <DependentUpon>frmShowUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUsers.Designer.cs">
+      <DependentUpon>frmAddUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages.cs" />
+    <Compile Include="model\dcAccountancy.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dcAccountancy.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddRoles.resx">
+      <DependentUpon>frmAddRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmresponsive.resx">
+      <DependentUpon>frmresponsive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowrolles.resx">
+      <DependentUpon>frmShowrolles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowUsers.resx">
+      <DependentUpon>frmShowUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddUsers.resx">
+      <DependentUpon>frmAddUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -60,7 +138,21 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
+    <None Include="model\dcAccountancy.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dcAccountancy.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="model\dcAccountancy.dbml.layout">
+      <DependentUpon>dcAccountancy.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Accounting.model.roles_tbl.datasource" />
+    <None Include="Properties\DataSources\Accounting.model.settings_tbl.datasource" />
+    <None Include="Properties\DataSources\Accounting.model.users_tbl.datasource" />
+    <None Include="Properties\DataSources\Accounting.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -70,6 +162,36 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tamal-anwar-understanding-react.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Configure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
