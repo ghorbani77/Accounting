@@ -62,6 +62,12 @@
     <Compile Include="frmAddRoles.Designer.cs">
       <DependentUpon>frmAddRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmresponsive.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,12 +104,14 @@
     <Compile Include="frmAddUsers.Designer.cs">
       <DependentUpon>frmAddUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Messages.cs" />
     <Compile Include="model\dcAccountancy.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dcAccountancy.dbml</DependentUpon>
     </Compile>
+    <Compile Include="modula\CryptionAlgorithm.cs" />
+    <Compile Include="modula\Messages.cs" />
+    <Compile Include="modula\PublicVariable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -111,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddRoles.resx">
       <DependentUpon>frmAddRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmresponsive.resx">
       <DependentUpon>frmresponsive.cs</DependentUpon>
@@ -193,5 +204,12 @@
   <ItemGroup>
     <None Include="Resources\Save.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shopping Cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shopping Cart2.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
