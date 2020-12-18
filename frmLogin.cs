@@ -3,6 +3,9 @@ using System;
 using System.Windows.Forms;
 using Accounting.Modula;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
+using System.Drawing;
 
 namespace Accounting
 {
@@ -73,8 +76,8 @@ namespace Accounting
             notify.Icon = SystemIcons.Information;
             notify.ShowBalloonTip(10);
 
-            Automation_systemEntities database = new Automation_systemEntities(PublicVariable.MainConnectionString);
-            int addad = database.Users.Count();
+            //Automation_systemEntities database = new Automation_systemEntities(PublicVariable.MainConnectionString);
+            //int addad = database.Users.Count();
             MessageBox.Show(addad.ToString());
             try
             {
@@ -107,15 +110,15 @@ namespace Accounting
 
                         /////ثبت اطلاعات کامپیوتر و آی پی کاربر جهت کنترل ورود و خروج
                         string ComputerName = System.Environment.MachineName;
-                        UserLog UL = new UserLog();
-                        UL.ComputerName = ComputerName;
-                        UL.IpAddress = lbl_IP.Text.Trim();
-                        UL.EnterDateTime = lbl_date.Text + "-" +
+                        //UserLog UL = new UserLog();
+                       // UL.ComputerName = ComputerName;
+                      //  UL.IpAddress = lbl_IP.Text.Trim();
+                       // UL.EnterDateTime = lbl_date.Text + "-" +
                             string.Format("{0:HH:mm:ss}", Convert.ToDateTime(DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second));
-                        UL.Userid = PublicVariable.gUserID;
+                        //UL.Userid = PublicVariable.gUserID;
 
-                        database.UserLogs.Add(UL);
-                        database.SaveChanges();
+                       // database.UserLogs.Add(UL);
+                       // database.SaveChanges();
                     }
                     else
                     {
